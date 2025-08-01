@@ -1,14 +1,22 @@
 
 import './App.css'
 import Form from './components/Form'
-import { OllamaChat } from './components/OllamaChat'
+import Header from './components/Header'
+import ThemeSwitcher from './components/ThemeSwitcher'
+import { ThemeProvider } from './context/ThemeContext'
 
 function App() {
 
   return (
-    <>
-    <OllamaChat/>
-    </>
+    <ThemeProvider>
+      <div >
+        <Header />
+        <div className="min-h-screen bg-gray-200 flex flex-col items-center justify-center dark:bg-gray-600">
+          <Form />
+        </div>
+
+      </div>
+    </ThemeProvider>
   )
 }
 
